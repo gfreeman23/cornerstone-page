@@ -1,0 +1,77 @@
+<style>
+  #section-{{ section.id }} {
+
+  }
+</style>
+
+<div class="section text-row">
+  <div class="container">
+    <div class="row align-items-center">
+      {% for block in section.blocks %}
+        {% case block.type %}
+          {% when 'text' %}
+            {% include "block_text" %}
+        {% endcase %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Text Row",
+  "blocks": [
+    {
+      "type": "text",
+      "name": "Text",
+      "elements": [
+        {
+          "type": "header",
+          "content": "Text"
+        },
+        {
+          "type": "rich_text",
+          "label": "Text",
+          "id": "text",
+          "default": "<h2>Text Block</h2><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>"
+        },
+        {
+          "type": "header",
+          "content": "Block Appearance",
+          "style": "subheading"
+        },
+        {
+          "type": "select",
+          "id": "width",
+          "label": "Width",
+          "default": "col-md-8",
+          "options": [
+            { "value": "col-md-1", "label": "1/12" },
+            { "value": "col-md-2", "label": "2/12" },
+            { "value": "col-md-3", "label": "3/12" },
+            { "value": "col-md-4", "label": "4/12" },
+            { "value": "col-md-5", "label": "5/12" },
+            { "value": "col-md-6", "label": "6/12" },
+            { "value": "col-md-7", "label": "7/12" },
+            { "value": "col-md-8", "label": "8/12" },
+            { "value": "col-md-9", "label": "9/12" },
+            { "value": "col-md-10", "label": "10/12" },
+            { "value": "col-md-11", "label": "11/12" },
+            { "value": "col-md-12", "label": "12/12" }
+          ]
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Text Row",
+      "category": "Text",
+      "blocks": [],
+      "settings": {
+      }
+    }
+  ]
+
+}
+{% endschema %}

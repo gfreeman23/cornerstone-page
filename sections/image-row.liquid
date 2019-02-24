@@ -1,0 +1,105 @@
+<style>
+  #section-{{ section.id }} {
+
+  }
+</style>
+
+<div class="section image-row">
+  <div class="container">
+    <div class="row align-items-center {{ block.settings.align }}">
+      {% for block in section.blocks %}
+        {% case block.type %}
+          {% when 'image' %}
+            {% include "block_image" %}
+        {% endcase %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Image Row",
+  "blocks": [
+    {
+      "type": "image",
+      "name": "Image",
+      "elements": [
+        {
+          "type": "header",
+          "content": "Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image",
+          "fit": "max",
+          "width": 2300,
+          "height": 2300,
+          "info": "Suggested dimensions: 1856 × 1044"
+        },
+        {
+          "type": "action",
+          "id": "img_action",
+          "label": "Image Action",
+          "anchor": true,
+          "two_step": true,
+          "default": ""
+        },
+        {
+          "type": "checkbox",
+          "id": "link_target",
+          "label": "Open In New Window",
+          "default": "false"
+        },
+        {
+          "type": "header",
+          "content": "Block Appearance",
+          "style": "subheading"
+        },
+        {
+          "type": "select",
+          "id": "width",
+          "label": "Width",
+          "default": "col-md-6",
+          "options": [
+            { "value": "col-md-1", "label": "1/12" },
+            { "value": "col-md-2", "label": "2/12" },
+            { "value": "col-md-3", "label": "3/12" },
+            { "value": "col-md-4", "label": "4/12" },
+            { "value": "col-md-5", "label": "5/12" },
+            { "value": "col-md-6", "label": "6/12" },
+            { "value": "col-md-7", "label": "7/12" },
+            { "value": "col-md-8", "label": "8/12" },
+            { "value": "col-md-9", "label": "9/12" },
+            { "value": "col-md-10", "label": "10/12" },
+            { "value": "col-md-11", "label": "11/12" },
+            { "value": "col-md-12", "label": "12/12" }
+          ]
+        },
+        {
+          "type": "select",
+          "id": "align",
+          "label": "Align",
+          "default": "center",
+          "options": [
+            { "value": "image-center", "label": "Center" },
+            { "value": "image-left", "label": "Left" },
+            { "value": "image-right", "label": "Right" }
+          ]
+        }        
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image Row",
+      "category": "Content",
+      "blocks": [],
+      "settings": {
+      }
+    }
+  ]
+
+}
+{% endschema %}
