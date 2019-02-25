@@ -101,15 +101,19 @@ a {
 
 .section {
   background: #fff;
-  padding: 20px 0;
+  padding: 25px 0;
   img {
     max-width: 100%;
   }
 }
 
+/*** INDEX PAGE ***/
+
 #index-wrap {
   padding-top: 60px;
 }
+
+/*** GRADIENT BACKGROUND ***/
 
 #background {
   position: absolute;
@@ -126,9 +130,13 @@ a {
   height: 20vw;
 }
 
+/*** TEXT ROW ***/
+
 .section.text-row {
   padding-bottom: 0;
 }
+
+/*** CONTENT ROW ***/
 
 .content-row .text-block:nth-child(odd) {
   padding: 20px 20px 20px 40px;
@@ -138,9 +146,13 @@ a {
   padding: 20px 40px 20px 20px;
 }  
 
+/*** ALIGN CENTER ***/
+
 .align-items-center div {
   margin: 0 auto;
 }
+
+/*** IMAGE ALIGNMENT ***/
 
 .image-center div {
   margin: 0 auto;
@@ -156,9 +168,19 @@ a {
 
 @media screen and (max-width: 767px) {
 
+  /*** SECTION ***/
+
+  .section {
+    padding: 20px 0;
+  }
+  
+  /*** IMAGE ROW ***/
+
   .image-row {
     padding-bottom: 40px;
   }
+  
+  /*** CONTENT ROW ***/
 
   .content-row .row {
     width: 100%;
@@ -193,6 +215,8 @@ a {
 
 @media screen and (max-width: 544px) {
 
+ /*** BACKGROUND ***/
+
   #background {
     height: 350px;
   }
@@ -200,6 +224,8 @@ a {
 }
 
 @media screen and (min-width: 1200px) {
+
+ /*** BACKGROUND ***/
 
   #background {
     height: 600px;
